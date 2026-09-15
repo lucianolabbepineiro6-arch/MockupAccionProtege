@@ -1,0 +1,29 @@
+{% extends "core/base_wp.html" %}
+{% load static %}
+{% block title %}Servicios | Acción Protege{% endblock %}
+{% block content %}
+<nav aria-label="Miga de pan" class="small mb-2"><a href="{% url 'home' %}">Inicio</a> / Servicios</nav>
+<h1>Servicios de seguridad</h1>
+<p>Protección física, electrónica y proyectos a medida para empresas, industria y minería.</p>
+<div class="row row-cols-1 row-cols-md-3 g-4 mt-2" aria-label="Listado de servicios">
+{% for s in servicios %}
+<div class="col">
+<div class="card h-100 shadow-sm border-0">
+<img src="{% static s.img %}" alt="{{ s.nombre }}" class="card-img-top card-servicio-img" loading="lazy">
+<div class="card-body d-flex flex-column">
+<h2 class="h5"><i class="bi {{ s.icono }}" aria-hidden="true"></i> {{ s.nombre }}</h2>
+<p class="flex-grow-1">{{ s.resumen }}</p>
+<a class="btn btn-outline-ap mt-auto" href="{% url 'detalle' s.slug %}" aria-label="Ver más sobre {{ s.nombre }}">Ver más</a>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+<div class="mt-4 p-4 p-md-5 rounded text-white d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3" style="background-color: var(--ap-footer);" role="note" aria-label="Llamado a cotizar">
+<div>
+<p class="h5 text-white mb-1"><i class="bi bi-shield-exclamation" aria-hidden="true"></i> ¿Faena o instalación crítica?</p>
+<p class="mb-0 small text-white-50">Cuéntanos tu dotación, turnos y ubicación. Respondemos en horario hábil.</p>
+</div>
+<a class="btn btn-ap text-nowrap" href="{% url 'contacto' %}">Solicitar cotización</a>
+</div>
+{% endblock %}

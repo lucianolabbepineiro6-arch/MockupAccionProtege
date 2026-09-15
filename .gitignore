@@ -1,0 +1,10 @@
+# Python / Django mockup
+__pycache__/
+*.py[cod]
+*.sqlite3
+db.sqlite3
+/staticfiles/
+/media/
+.env
+.venv/
+venv/

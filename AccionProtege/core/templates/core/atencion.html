@@ -1,0 +1,12 @@
+{% extends "core/base_wp.html" %}
+{% load static %}
+{% block title %}Atención Personalizada | Acción Protege{% endblock %}
+{% block content %}
+<div class="row g-4 align-items-center">
+<div class="col-md-6"><h1>Atención Personalizada</h1><p>Profesionales de vasta experiencia y tecnología de punta para minimizar riesgos y amenazas de la empresa moderna.</p>
+<!-- [demo por validar] -->
+<ul><li>Un interlocutor para tu cuenta.</li><li>Protocolos escritos por instalación.</li><li>Revisión periódica del plan.</li></ul>
+<a class="btn btn-ap" href="{% url 'contacto' %}">Cotizar atención personalizada</a></div>
+<div class="col-md-6"><img src="{% static 'img/atencion.jpg' %}" alt="Atención personalizada" class="img-fluid rounded shadow"></div>
+</div>
+{% endblock %}

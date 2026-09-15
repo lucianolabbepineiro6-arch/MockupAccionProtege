@@ -1,0 +1,98 @@
+:root {
+  --ap-azul: #034c81;
+  --ap-azul-dark: #023357;
+  --ap-titulo: #122432;
+  --ap-amarillo: #f8ca23;
+  --ap-amarillo-hover: #e0b410;
+  --ap-texto: #334155;
+  --ap-bg-light: #f8fafc;
+  --ap-footer: #12212f;
+  --ap-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ap-radius: 8px;
+}
+
+body {
+  font-family: var(--ap-font);
+  color: var(--ap-texto);
+  background-color: #ffffff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ap-titulo);
+  font-weight: 700;
+}
+
+/* Skip Link para accesibilidad */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--ap-amarillo);
+  color: #0f172a;
+  padding: 8px 16px;
+  z-index: 9999;
+  font-weight: bold;
+  text-decoration: none;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Foco accesible global */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--ap-amarillo) !important;
+  outline-offset: 2px !important;
+}
+
+/* Botones personalizados con alto contraste */
+.btn-ap {
+  background-color: var(--ap-amarillo);
+  color: #0f172a;
+  font-weight: 700;
+  border: 2px solid var(--ap-amarillo);
+  border-radius: var(--ap-radius);
+  padding: 0.6rem 1.4rem;
+  transition: all 0.2s ease-in-out;
+}
+.btn-ap:hover, .btn-ap:focus {
+  background-color: var(--ap-amarillo-hover);
+  border-color: var(--ap-amarillo-hover);
+  color: #000000;
+}
+
+.btn-outline-ap {
+  background-color: transparent;
+  color: var(--ap-azul);
+  font-weight: 600;
+  border: 2px solid var(--ap-azul);
+  border-radius: var(--ap-radius);
+  padding: 0.6rem 1.4rem;
+  transition: all 0.2s ease-in-out;
+}
+.btn-outline-ap:hover, .btn-outline-ap:focus {
+  background-color: var(--ap-azul);
+  color: #ffffff;
+}
+
+.bg-ap-footer {
+  background-color: var(--ap-footer);
+}
+
+.hero-overlay {
+  background: linear-gradient(rgba(18, 36, 50, 0.75), rgba(3, 76, 129, 0.85)), url('../img/instalaciones.jpg') center/cover no-repeat;
+  color: #ffffff;
+}
+
+.card-servicio-img {
+  height: 160px;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .btn-ap, .btn-outline-ap {
+    width: 100%;
+    text-align: center;
+  }
+}

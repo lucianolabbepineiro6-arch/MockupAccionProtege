@@ -1,0 +1,73 @@
+{% extends "core/base_wp.html" %}
+{% block title %}Política de Privacidad y Protección de Datos | Acción Protege{% endblock %}
+{% block meta_desc %}Cómo tratamos tus datos personales según Ley 19.628 modificada por Ley 21.719, tus 6 derechos y medidas de seguridad ISO 27001 y OWASP.{% endblock %}
+{% block content %}
+<nav aria-label="Miga de pan" class="small mb-2"><a href="{% url 'home' %}">Inicio</a> / Privacidad</nav>
+<h1>Política de Privacidad y Protección de Datos Personales</h1>
+<p class="text-muted">Actualizada: septiembre 2026. Responsable: Acción Protege Seguridad Limitada, Av. Nueva Los Leones 0243 Of. 11, Providencia, Santiago. Gerente General: Jorge Méndez Espinoza. Contacto: +56 2 2335 9125 y <a href="{% url 'contacto' %}">formulario de contacto</a>. [pendiente: correo exclusivo privacidad@accionprotege.cl]</p>
+<p>Esta política explica qué datos pedimos en este sitio, para qué los usamos y cómo ejercer tus derechos. Lenguaje simple según deber de transparencia (Art. 14 ter Ley 19.628 modificada por Ley 21.719). Trazabilidad: P2-HU-03 -&gt; P2-CU-02 -&gt; RF-02.</p>
+
+<h2>1. Leyes que cumplimos</h2>
+<ul>
+<li><strong>Chile:</strong> Constitución Art. 19 N°4 (respeto a la vida privada y datos personales); Ley 19.628 sobre Protección de Datos Personales, reescrita por Ley 21.719 (publicada 13-dic-2024, vigencia plena 01-dic-2026); Ley 19.223 / 21.459 sobre delitos informáticos (acceso ilícito, sabotaje).</li>
+<li><strong>Internacional (referencia, no imposición):</strong> ISO/IEC 27001:2022 (sistema de gestión de seguridad de la información: confidencialidad, integridad, disponibilidad); OWASP Top 10:2021 (riesgos web: control de acceso, fallas criptográficas, inyección, configuración insegura); RGPD europeo como marco comparable.</li>
+<li>[pendiente por validar: fecha exacta de vigencia si se aprueba Boletín 18.623-07 que movería la vigencia a dic-2027. Hoy rige 01-dic-2026.]</li>
+</ul>
+
+<h2>2. Qué datos tratamos y para qué</h2>
+<div class="table-responsive">
+<table class="table table-bordered table-striped">
+<thead><tr><th>Dato</th><th>Para qué</th><th>Base legal</th><th>Cuánto se guarda</th></tr></thead>
+<tbody>
+<tr><td>Nombre, email, mensaje</td><td>Responder tu cotización o consulta</td><td>Tu consentimiento previo, libre e informado (Art. 12) + medidas precontractuales (Art. 13 letra c)</td><td>12 meses desde tu último contacto, luego se suprime o anonimiza</td></tr>
+<tr><td>Teléfono (opcional)</td><td>Llamarte solo si lo pides en el mensaje</td><td>Consentimiento (Art. 12)</td><td>12 meses, igual que arriba</td></tr>
+<tr><td>Registro de consentimiento: sí/no + fecha + IP</td><td>Probar que aceptaste esta política</td><td>Obligación legal del responsable (Art. 14)</td><td>12 meses</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>No pedimos:</strong> RUT, dirección particular, datos de salud, biométricos, bancarios ni datos de menores. No hagas eso en el campo mensaje. Si lo escribes igual, lo trataremos solo para responder y lo borraremos en el plazo indicado.</p>
+<p><strong>Cámaras en faenas de clientes:</strong> este sitio no opera CCTV. Si contratas guardias o monitoreo, el tratamiento de imágenes se regula en el contrato de servicio aparte. [pendiente por validar con jefatura].</p>
+
+<h2>3. Cómo nos das tu permiso</h2>
+<ul>
+<li>Marcas el check "Acepto la política" antes de enviar. Sin esa marca el formulario no se envía.</li>
+<li>El permiso es libre, específico y revocable: puedes quitarlo cuando quieras escribiéndonos (punto 5). Quitarlo no borra lo ya respondido, pero frena futuros contactos comerciales.</li>
+<li>No cedemos ni vendemos tus datos. No hay transferencias internacionales desde este mockup. [pendiente: hosting definitivo y su país].</li>
+</ul>
+
+<h2>4. Tus 6 derechos (Art. 4° al 11)</h2>
+<ol>
+<li><strong>Acceso (Art. 5):</strong> saber si tenemos datos tuyos y copia de ellos.</li>
+<li><strong>Rectificación (Art. 6):</strong> corregir datos inexactos o desactualizados.</li>
+<li><strong>Supresión (Art. 7):</strong> pedir que los borremos cuando ya no sean necesarios.</li>
+<li><strong>Oposición (Art. 8):</strong> negarte a un uso concreto (ej. marketing).</li>
+<li><strong>Portabilidad (Art. 9):</strong> recibir tus datos en formato común (CSV/JSON) para llevarlos a otro proveedor.</li>
+<li><strong>Bloqueo (Art. 8 ter):</strong> congelar el uso mientras se resuelve tu reclamo de rectificación, supresión u oposición.</li>
+</ol>
+<p>Son personales, irrenunciables y gratuitos. Herederos pueden ejercerlos según Art. 4°.</p>
+
+<h2>5. Cómo ejercer tus derechos</h2>
+<ol>
+<li>Escríbenos por el <a href="{% url 'contacto' %}">formulario</a> indicando: nombre, email, derecho que ejerces (acceso, rectificación, etc.) y qué dato afecta.</li>
+<li>Respondemos en <strong>30 días corridos</strong> (prorrogables 30 más si el caso es complejo, Art. 11).</li>
+<li>Si no respondemos o la respuesta no te deja conforme, puedes reclamar ante la Agencia de Protección de Datos Personales (desde su entrada en funciones el 01-dic-2026) o ante el juez civil según Ley 19.628 vigente.</li>
+</ol>
+
+<h2>6. Seguridad (cómo cuidamos tus datos)</h2>
+<ul>
+<li><strong>Técnicas (ISO 27001 + OWASP):</strong> HTTPS en producción [pendiente: activar], CSRF en formularios Django, validación y escape contra inyección/XSS, control de acceso al admin, contraseñas con validadores Django, copias de respaldo antes de cambios en WP/staging.</li>
+<li><strong>Organizativas:</strong> deber de secreto (Art. 14 bis, sigue vigente tras terminar la relación), acceso mínimo necesario, registro interno de tratamientos, capacitación básica del personal que responde cotizaciones.</li>
+<li><strong>Brechas (Art. 14 sexies):</strong> si hay filtración, pérdida o acceso no autorizado con riesgo para tus derechos, avisamos a la Agencia sin dilación indebida y a ti si el riesgo lo exige. La ley chilena no fija 72 horas como el RGPD; usamos "lo antes posible" como buena práctica.</li>
+</ul>
+
+<h2>7. Conservación y eliminación</h2>
+<p>Guardamos solicitudes 12 meses. Cumplido el plazo, se suprimen o anonimizar (Art. 14 letra d). Si pides supresión antes, borramos salvo que una ley nos obligue a guardar (ej. obligación tributaria o defensa judicial, Art. 13 letras b y e).</p>
+
+<h2>8. Menores y terceros</h2>
+<p>Sitio dirigido a empresas, no a menores de 14 años. Si escribes en nombre de tu empresa, declara que tienes poder para entregar datos de terceros.</p>
+
+<h2>9. Cambios a esta política</h2>
+<p>Publicaremos aquí cualquier cambio con nueva fecha. Si el cambio amplía finalidades, pediremos nuevo consentimiento.</p>
+
+<p><a class="btn btn-ap" href="{% url 'contacto' %}">Volver al formulario de contacto</a></p>
+{% endblock %}

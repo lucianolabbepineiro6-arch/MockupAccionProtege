@@ -1,0 +1,11 @@
+{% extends "core/base_wp.html" %}
+{% load static %}
+{% block title %}Misión y Visión | Acción Protege{% endblock %}
+{% block content %}
+<h1>Misión y Visión</h1>
+<div class="row g-3 align-items-start">
+<div class="col-md-6"><div class="row g-3"><div class="col-12"><div class="card h-100"><div class="card-body"><h2 class="h5">Misión</h2><p>Proporcionar servicios de excelencia a personas, empresas y organizaciones para que operen en confianza y seguridad.</p></div></div></div><div class="col-12"><div class="card h-100"><div class="card-body"><h2 class="h5">Visión</h2><p>Ser reconocidos y confiables en seguridad privada, con calidad, salud ocupacional y respeto ambiental.</p></div></div></div></div></div>
+<div class="col-md-6"><img src="{% static 'img/mision.jpg' %}" alt="Misión Acción Protege" class="img-fluid rounded shadow"></div>
+</div>
+<a class="btn btn-ap mt-3" href="{% url 'contacto' %}">Solicitar cotización</a>
+{% endblock %}

@@ -1,0 +1,38 @@
+PROMPT PARA GEMINI - MEJORAR DISEÑO WEB ACCION PROTEGE (Django Mockup KAN-011)
+Copia desde "INICIO PROMPT" hasta "FIN PROMPT" y pegalo en Gemini.
+
+--- INICIO PROMPT ---
+
+Rol: Actua como diseñador UX/UI senior + frontend senior con experiencia en webs corporativas de servicios (seguridad, industria, mineria).
+
+Contexto del proyecto:
+- Empresa: Accion Protege Seguridad Limitada, Providencia Santiago. 20+ años, guardias, CCTV, control de acceso, alarmas, industria y mineria. Gerente: Jorge Mendez Espinoza. Tel 562 23359125.
+- Proyecto actual: mockup funcional en Django 6.1.1 (Python), SQLite, 3 apps: core (Home, Nosotros, Mision, Atencion, Garantia, Vigilancia), servicios (lista, detalle por slug, instalaciones-industriales-mineras), contacto_legal (contacto con formulario + privacidad Ley 21.719 Chile).
+- Templates Django que heredan de core/templates/core/base_wp.html. Home: core/templates/core/home.html. Servicios: servicios/templates/servicios/lista.html. Contacto: contacto_legal/templates/contacto_legal/contacto.html.
+- CSS actual: static/css/ap.css (33 lineas, variables :root --ap-azul:#034c81 --ap-titulo:#122432 --ap-amarillo:#f8ca23 --ap-footer:#12212f). Framework actual: Bootstrap 5.3.3 por CDN en base_wp.html + Bootstrap Icons 1.11.3 + carousel, navbar-expand-lg, cards.
+- Objetivo mockup: solo frontend navegable (Home + Nosotros + Servicios + Contacto), CTA "Solicitar cotizacion / Cotizar" siempre visible, responsive movil-first, accesible, textos reales actuales, sin login ni backend extra.
+
+Lo que necesito (entregame en este orden):
+1. Auditoria rapida (tabla): 5 problemas de diseño amigable que ves en este stack (jerarquia visual, contraste, CTA, navegacion, mobile, confianza). Para cada uno: donde pasa (ej: home.html hero, base_wp.html nav, ap.css .btn-ap, lista.html cards) + por que es problema + fix concreto.
+2. Framework: para este tipo de web corporativa de servicios B2B (no dashboard, no SaaS), compara Bootstrap 5.3.8 vs Tailwind CSS v4 en 2026 en: velocidad de desarrollo sin diseñador, peso/performance, personalizacion de marca, accesibilidad por defecto, integracion con Django templates. Recomienda UNO y justifica en 3 lineas. Si recomiendas mantener Bootstrap, dime como usarlo correctamente (grid, utilities, componentes a usar y cuales evitar). Si recomiendas migrar a Tailwind, dime pasos minimos de migracion sin romper templates Django.
+3. Propuesta de mejora amigable (lista accionable por pagina):
+   - Home: hero, barra confianza (20+ años, COP 24/7), 3 cards servicios, Como trabajamos, FAQ.
+   - Servicios/lista.html: cards con img 160px object-fit cover, iconos bi-*.
+   - Contacto/contacto.html: form-card + info-card + mapa iframe Google Maps.
+   Para cada pagina dame: estructura HTML semantica sugerida, clases Bootstrap correctas, mejoras de accesibilidad (aria, labels, alt, contraste, foco visible, skip-link que ya existe en base_wp.html:14), y microcopy en español-Chile simple.
+4. Sistema visual: paleta (mantener azul #034c81 y amarillo #f8ca23 o ajustar por contraste WCAG AA), tipografia sistema vs Google Fonts (rapida), espaciados, radios, sombras, botones .btn-ap y .btn-outline-ap. Dame variables CSS mejoradas para ap.css.
+5. Codigo listo para pegar: 
+   a) base_wp.html mejorado (CDN Bootstrap 5.3.8 con integrity, nav accesible, footer).
+   b) ap.css mejorado completo.
+   c) ejemplo de 1 card servicio y 1 hero mejorados.
+   No inventes rutas, slugs ni imagenes nuevas. Usa solo: static/img/slider1.jpg, slider2.jpg, slider3.jpg, img1.png, img2.png, img3.png, guardia-urbano.jpg, domo.jpg, acceso-puerta.jpg, cctv-poste.jpg, instalaciones.jpg, mision.jpg, nosotros.jpg, servicios.jpg, logo.png. Slugs validos: guardias-vip, alarmas, control-acceso, cctv-monitoreo, proyectos, instalaciones-industriales-mineras.
+
+Restricciones:
+- Mantener Django Template Language ({% extends %}, {% url %}, {% static %}). No React, no Node obligatorio.
+- Mobile-first, max-width legible, botones 100% en movil (ya existe media query en ap.css:33).
+- No pedir passwords/tokens. Cumplir Ley 21.719 en formulario.
+- Respuesta en español simple, sin jerga innecesaria, con ejemplos copiables.
+
+Preguntame al final: 1 pregunta para afinar estilo (¿quieres look corporativo serio azul/blanco o más comercial con amarillo protagonista?).
+
+--- FIN PROMPT ---

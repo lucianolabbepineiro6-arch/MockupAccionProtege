@@ -1,0 +1,68 @@
+{% extends "core/base_wp.html" %}
+{% block title %}Contacto | Acción Protege{% endblock %}
+{% block content %}
+<nav aria-label="Miga de pan" class="small mb-2"><a href="{% url 'home' %}">Inicio</a> / Contacto</nav>
+<h1>Contáctanos</h1>
+<p class="text-muted">Respuesta en horario hábil. Tus datos solo se usan para responder tu solicitud. Ver <a href="{% url 'privacidad' %}">política de privacidad Ley 21.719</a>.</p>
+<div class="row g-4 align-items-start">
+<div class="col-12 col-lg-7">
+<div class="card shadow-sm border-0 p-3 p-md-4">
+<form method="post" novalidate aria-label="Formulario de contacto">
+{% csrf_token %}
+{% if form.non_field_errors %}<div class="alert alert-danger" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+<div class="row g-3">
+<div class="col-12 col-md-6">
+<label class="form-label" for="{{ form.nombre.id_for_label }}">Nombre *</label>
+{{ form.nombre }}
+{% if form.nombre.errors %}<div class="invalid-feedback d-block" role="alert">{{ form.nombre.errors }}</div>{% endif %}
+</div>
+<div class="col-12 col-md-6">
+<label class="form-label" for="{{ form.email.id_for_label }}">Email *</label>
+{{ form.email }}
+{% if form.email.errors %}<div class="invalid-feedback d-block" role="alert">{{ form.email.errors }}</div>{% endif %}
+</div>
+<div class="col-12">
+<label class="form-label" for="{{ form.telefono.id_for_label }}">Teléfono</label>
+{{ form.telefono }}
+{% if form.telefono.errors %}<div class="invalid-feedback d-block" role="alert">{{ form.telefono.errors }}</div>{% endif %}
+</div>
+<div class="col-12">
+<label class="form-label" for="{{ form.mensaje.id_for_label }}">Mensaje *</label>
+{{ form.mensaje }}
+{% if form.mensaje.errors %}<div class="invalid-feedback d-block" role="alert">{{ form.mensaje.errors }}</div>{% endif %}
+</div>
+<div class="col-12">
+<div class="form-check">
+{{ form.acepta_privacidad }}
+<label class="form-check-label" for="{{ form.acepta_privacidad.id_for_label }}">Acepto la <a href="{% url 'privacidad' %}">política de tratamiento de datos personales (Ley 21.719 de Chile)</a> *</label>
+{% if form.acepta_privacidad.errors %}<div class="invalid-feedback d-block" role="alert">{{ form.acepta_privacidad.errors }}</div>{% endif %}
+</div>
+<p class="small text-muted mt-2 mb-0">Usaremos tu nombre, email y mensaje solo para responder tu cotización. Puedes pedir rectificación o eliminación cuando quieras.</p>
+</div>
+<div class="col-12 d-grid d-md-block"><button class="btn btn-ap" type="submit">Enviar solicitud</button></div>
+</div>
+</form>
+</div>
+</div>
+<div class="col-12 col-lg-5">
+<div class="card shadow-sm border-0 p-3 p-md-4 h-100">
+<h2 class="h5"><i class="bi bi-headset" aria-hidden="true"></i> Datos directos</h2>
+<p class="mb-3"><span class="badge text-dark" style="background-color: var(--ap-amarillo);">Respuesta en horario hábil</span></p>
+<ul class="list-group list-group-flush mb-3">
+<li class="list-group-item px-0"><i class="bi bi-telephone-fill text-primary" aria-hidden="true"></i> <strong>Teléfono:</strong> +56 2 2335 9125</li>
+<li class="list-group-item px-0"><i class="bi bi-geo-alt-fill text-danger" aria-hidden="true"></i> <strong>Dirección:</strong> Av. Nueva Los Leones 0243, Of. 11, Providencia, Santiago</li>
+<li class="list-group-item px-0"><i class="bi bi-person-badge-fill text-success" aria-hidden="true"></i> <strong>Atención:</strong> Oficina central <span class="text-muted small">(Equipo Acción Protege)</span></li>
+<li class="list-group-item px-0"><i class="bi bi-clock-fill text-secondary" aria-hidden="true"></i> <strong>Horario:</strong> Lun–Vie hábil <span class="text-muted small">(consultas por formulario 24/7)</span></li>
+</ul>
+<div class="d-grid gap-2 mb-3">
+<a class="btn btn-outline-ap w-100" href="{% url 'lista' %}">Ver servicios antes de cotizar</a>
+</div>
+<h3 class="h6 mt-2">Dónde estamos</h3>
+<div class="ratio ratio-16x9 rounded overflow-hidden">
+<iframe title="Mapa Acción Protege Seguridad Limitada - Providencia" src="https://www.google.com/maps?q=Accion+Protege+Seguridad+Limitada,+Nueva+Los+Leones+0243+Of+11,+7510691+Providencia&z=16&output=embed" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+</div>
+<p class="small mt-2 mb-0"><a href="https://www.google.com/maps/place/Accion+Protege+Seguridad+Limitada/@-33.4185468,-70.6079629,19z/data=!4m6!3m5!1s0x9662cf683d06573f:0xb52d3e06d247e6d2!8m2!3d-33.4183337!4d-70.607807!16s%2Fg%2F11gcfzcbwp" target="_blank" rel="noopener">Abrir en Google Maps</a></p>
+</div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "core/base_wp.html" %}
+{% load static %}
+{% block title %}{{ s.nombre }} | Acción Protege{% endblock %}
+{% block content %}
+<nav aria-label="Miga"><a href="{% url 'home' %}">Inicio</a> / <a href="{% url 'lista' %}">Servicios</a> / {{ s.nombre }}</nav>
+<div class="row g-4 align-items-center">
+<div class="col-md-6"><h1><i class="bi {{ s.icono }}" aria-hidden="true"></i> {{ s.nombre }}</h1><p>{{ s.detalle }}</p>
+<h2>Qué incluye</h2>
+<ul><li>Levantamiento en terreno</li><li>Personal capacitado</li><li>Supervisión COP 24/7</li></ul>
+<!-- [demo por validar] contenido genérico del rubro -->
+<h2>Cuándo te conviene</h2><p>Cuando necesitas orden en accesos, presencia disuasiva y registro de novedades por turno, sin improvisar.</p>
+<h2>Cómo se cotiza</h2><ol><li>Nos cuentas dotación, turnos y ubicación.</li><li>Proponemos plan y tecnología complementaria.</li><li>Partimos con protocolos y supervisión.</li></ol>
+<a class="btn btn-ap" href="{% url 'contacto' %}">Cotizar este servicio</a> <a class="btn btn-outline-ap" href="{% url 'lista' %}">Volver a servicios</a></div>
+<div class="col-md-6"><img src="{% static s.img %}" alt="{{ s.nombre }}" class="img-fluid rounded shadow"></div>
+</div>
+{% endblock %}

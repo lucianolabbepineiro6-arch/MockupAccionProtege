@@ -1,0 +1,12 @@
+{% extends "core/base_wp.html" %}
+{% load static %}
+{% block title %}Industria y Minería | Acción Protege{% endblock %}
+{% block content %}
+<div class="row g-4 align-items-center">
+<div class="col-md-6"><h1>Instalaciones Industriales y Mineras</h1><p>Protección calificada para faenas de alta complejidad, con foco en seguridad global, prevención de riesgos y control de pérdidas operacionales.</p>
+<!-- [demo por validar] -->
+<ul><li>Control de acceso peatonal y vehicular.</li><li>Rondas perimetrales y de puntos críticos.</li><li>Apoyo a prevención de riesgos y control de pérdidas.</li></ul>
+<a class="btn btn-ap" href="{% url 'contacto' %}">Cotizar faena</a></div>
+<div class="col-md-6"><img src="{% static 'img/instalaciones.jpg' %}" alt="Instalaciones industriales y mineras" class="img-fluid rounded shadow"></div>
+</div>
+{% endblock %}
